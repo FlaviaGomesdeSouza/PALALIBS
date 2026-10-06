@@ -95,8 +95,12 @@ O arquivo `x1c_fdm.scad` usa o modelo principal com medidas próprias para FDM. 
 `stl/x1c/`.
 
 **Diferenças em relação à versão usinada:**
-- Folgas maiores.
-- Todas as roscas são M3 em **insertos de latão** (furo de 4,0 mm).
+- Configurada para **policarbonato (PC)**. Em `x1c_fdm.scad`, `material = "PETG"` troca as folgas para
+  PETG.
+- Folgas que compensam a contração do PC (~0,5–0,7 %): cavidade com +0,4 mm, seção com −0,1 mm e furo
+  de inserto de 4,1 mm.
+- Chanfro de 0,6 mm na borda de baixo, para absorver o "pé de elefante" da primeira camada.
+- Todas as roscas são M3 em **insertos de latão**.
 - Tampa de 2 mm presa com M3 escareado.
 - Altura total de **12 mm**. Confira se o porta-amostras aceita essa altura; se não aceitar, altere
   `altura` em `x1c_fdm.scad`.
@@ -114,8 +118,7 @@ O arquivo `x1c_fdm.scad` usa o modelo principal com medidas próprias para FDM. 
 
 | Peça | Filamento | Por quê |
 |---|---|---|
-| Base e pistões | **PETG** ou **PC**, cor natural | São resistentes e não têm pigmento metálico. |
-| Tampa | **PC natural** (1ª opção) ou **PETG-CF / PA-CF** | Precisa ser rígida e não pode ceder com o aperto. |
+| Base, pistões e tampa | **PC transparente / natural** (sem pigmento) | É rígido, aguenta calor, cede pouco sob o aperto da tampa e não tem pigmento metálico. |
 
 **PLA-CF não é recomendado para a tampa:**
 - O PLA amolece a ~55–60 °C e **deforma com o tempo sob carga constante**: a pastilha afrouxa.
@@ -125,26 +128,38 @@ O arquivo `x1c_fdm.scad` usa o modelo principal com medidas próprias para FDM. 
 Se quiser mesmo um filamento com fibra, use **PETG-CF** ou **PA-CF**, que deformam bem menos. O PA
 precisa estar muito seco: absorve umidade, que depois sai na purga de He/Ar.
 
-### Configuração de impressão
-- Bico de 0,4 mm e camadas de 0,12–0,16 mm.
-- **Preenchimento de 100%** e 4 ou mais paredes (peça maciça, sem ar preso).
-- Base com o fundo na mesa e **ironing** no topo.
-- Tampa com a **face inferior na mesa**. Essa face é a que encosta nas pastilhas e sai bem plana da
-  placa lisa.
-- Seque o filamento antes de imprimir.
+### Configuração de impressão em PC (Bambu Studio)
+- **Secar o filamento:** o PC absorve umidade, e filamento úmido sai com bolhas e fios. Seque a 70–80 °C
+  por 6–8 h em secadora e imprima direto da caixa seca (AMS com dessecante).
+- **Perfil:** "Bambu PC" ou "Generic PC". Bico a 260–280 °C, mesa a 100–110 °C, ventilador entre 10 e
+  30 %.
+- **Câmara:** porta e tampa da X1C **fechadas**. Pré-aqueça a mesa por ~10 min antes de começar, para a
+  câmara esquentar; isso reduz empenamento e trincas entre camadas.
+- **Placa:** Engineering Plate ou Textured PEI, **com cola bastão** (o PC gruda forte demais no PEI liso
+  e pode arrancar a superfície).
+- **Camadas e preenchimento:** camadas de 0,12–0,16 mm, **preenchimento de 100 %** e 4 ou mais paredes.
+- **Orientação:** base com o fundo na mesa e **ironing** no topo. Tampa com a **face inferior na mesa**,
+  porque é a face que encosta nas pastilhas.
+- **Brim:** de 3–5 mm na tampa, que é fina e plana. Na base, use se a borda levantar.
+- **Retirada:** espere a placa esfriar antes de tirar as peças, para a tampa não entortar.
+- **Contração:** **não** ligue a compensação de contração do fatiador; ela já está nas folgas do modelo.
+- **Ordem:** imprima primeiro `teste_encaixe.stl`. Se a pastilha ficar justa demais, aumente
+  `folga_pastilha` em 0,05–0,1; se a peça ficar folgada no porta-amostras, diminua `folga_secao`.
 
 ### Lista de compras (por suporte de 2 pastilhas, com tampa)
 
 | Qtde | Item |
 |---|---|
-| 4 | Inserto de latão M3 para fixar a quente (furo de 4,0 mm; ex.: M3 × 4 mm × Ø 4,5–5 mm) |
+| 4 | Inserto de latão M3 para fixar a quente (M3 × 4 mm × Ø 4,5–5 mm; furo de 4,1 mm no modelo em PC) |
 | 2 | Parafuso sem cabeça M3 × 10 mm, inox (DIN 913): ajuste de altura |
 | 2 | Parafuso M3 × 10 mm escareado, inox (DIN 965 / ISO 10642): tampa |
 | 1 | Chave Allen de 1,5 mm (+ chave Allen de 2 mm ou Phillips para a tampa, conforme o parafuso) |
 
 Para a versão lateral, troque os 2 parafusos da tampa por **2 parafusos sem cabeça M3 × 6 mm com ponta
 de nylon** e abra a rosca do furo lateral com **macho M3**. Para os insertos, use um ferro de solda
-(~220 °C para PETG, ~260 °C para PC).
+(~220 °C para PETG, ~260–280 °C para PC).
+
+![Peças para comprar](img/compras/lista_compras.png)
 
 ## Fabricação
 

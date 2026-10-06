@@ -76,6 +76,8 @@ comprimento_calco = 2.5;
 
 /* [Acabamento] */
 chanfro = 0.3;
+// Chanfro da borda de baixo (compensa o "pé de elefante" da 1ª camada no FDM)
+chanfro_inferior = 0.3;
 $fn = 128;
 
 d_secao = diametro_secao - folga_secao;
@@ -122,8 +124,9 @@ function dir_lateral(i) = n_pastilhas == 1 ? 0 : angulo(i) - 90;
 
 module cilindro_chanfrado(d, h) {
     hull() {
-        translate([0, 0, chanfro]) cylinder(d = d, h = h - 2 * chanfro);
-        cylinder(d = d - 2 * chanfro, h = h);
+        translate([0, 0, chanfro_inferior]) cylinder(d = d, h = h - chanfro_inferior - chanfro);
+        cylinder(d = d - 2 * chanfro_inferior, h = h - chanfro);
+        translate([0, 0, chanfro]) cylinder(d = d - 2 * chanfro, h = h - chanfro);
     }
 }
 
