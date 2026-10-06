@@ -87,6 +87,65 @@ compensa a diferença de espessura entre elas. O mesmo parafuso serve para extra
 **Antes de fabricar, confira** a altura máxima que o porta-amostras do equipamento aceita e altere
 `altura`, se precisar.
 
+## Versão para impressão FDM (Bambu Lab X1 Carbon)
+
+![Versão X1C, 2 pastilhas com tampa](img/x1c_conjunto_2x13mm_tampa.png)
+
+O arquivo `x1c_fdm.scad` usa o modelo principal com medidas próprias para FDM. Os STL prontos estão em
+`stl/x1c/`.
+
+**Diferenças em relação à versão usinada:**
+- Folgas maiores.
+- Todas as roscas são M3 em **insertos de latão** (furo de 4,0 mm).
+- Tampa de 2 mm presa com M3 escareado.
+- Altura total de **12 mm**. Confira se o porta-amostras aceita essa altura; se não aceitar, altere
+  `altura` em `x1c_fdm.scad`.
+- Só 1 ou 2 pastilhas. A versão para 3 não é imprimível em FDM.
+
+| Arquivo (`stl/x1c/`) | Peça |
+|---|---|
+| `teste_encaixe.stl` | Anel de 3 mm para testar a pastilha e o porta-amostras. **Imprima este primeiro.** |
+| `base_2x13mm_tampa.stl` + `tampa_2x13mm.stl` | 2 pastilhas, com tampa (pastilhas de até 4,4 mm) |
+| `base_1x13mm_tampa.stl` + `tampa_1x13mm.stl` | 1 pastilha, com tampa |
+| `base_2x13mm_lateral.stl` / `base_1x13mm_lateral.stl` | Parafuso lateral (pastilhas de 2 a 6,4 mm) |
+| `pistao_13mm.stl` | Pistão (um por cavidade) |
+
+### Material
+
+| Peça | Filamento | Por quê |
+|---|---|---|
+| Base e pistões | **PETG** ou **PC**, cor natural | São resistentes e não têm pigmento metálico. |
+| Tampa | **PC natural** (1ª opção) ou **PETG-CF / PA-CF** | Precisa ser rígida e não pode ceder com o aperto. |
+
+**PLA-CF não é recomendado para a tampa:**
+- O PLA amolece a ~55–60 °C e **deforma com o tempo sob carga constante**: a pastilha afrouxa.
+- A fibra deixa o PLA mais rígido, mas também **mais quebradiço**, e a borda da janela é fina.
+- É sempre preto (fibra de carbono e negro de fumo). Se o laser pegar a borda, aparecem C e CN no LIBS.
+
+Se quiser mesmo um filamento com fibra, use **PETG-CF** ou **PA-CF**, que deformam bem menos. O PA
+precisa estar muito seco: absorve umidade, que depois sai na purga de He/Ar.
+
+### Configuração de impressão
+- Bico de 0,4 mm e camadas de 0,12–0,16 mm.
+- **Preenchimento de 100%** e 4 ou mais paredes (peça maciça, sem ar preso).
+- Base com o fundo na mesa e **ironing** no topo.
+- Tampa com a **face inferior na mesa**. Essa face é a que encosta nas pastilhas e sai bem plana da
+  placa lisa.
+- Seque o filamento antes de imprimir.
+
+### Lista de compras (por suporte de 2 pastilhas, com tampa)
+
+| Qtde | Item |
+|---|---|
+| 4 | Inserto de latão M3 para fixar a quente (furo de 4,0 mm; ex.: M3 × 4 mm × Ø 4,5–5 mm) |
+| 2 | Parafuso sem cabeça M3 × 10 mm, inox (DIN 913): ajuste de altura |
+| 2 | Parafuso M3 × 10 mm escareado, inox (DIN 965 / ISO 10642): tampa |
+| 1 | Chave Allen de 1,5 mm (+ chave Allen de 2 mm ou Phillips para a tampa, conforme o parafuso) |
+
+Para a versão lateral, troque os 2 parafusos da tampa por **2 parafusos sem cabeça M3 × 6 mm com ponta
+de nylon** e abra a rosca do furo lateral com **macho M3**. Para os insertos, use um ferro de solda
+(~220 °C para PETG, ~260 °C para PC).
+
 ## Fabricação
 
 - **Versão para 3 pastilhas:** a parede da borda fica com ~0,5 mm. Usine em alumínio, PEEK ou POM

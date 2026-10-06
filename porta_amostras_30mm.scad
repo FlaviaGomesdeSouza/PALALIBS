@@ -59,7 +59,11 @@ aba_reta = 0.4;
 // Raio do círculo dos parafusos M2 da tampa (mm)
 r_parafusos_tampa = 12.5;
 // Furo na base para os parafusos da tampa: 1.6 para rosca M2 com macho
-furo_m2_base = 1.6;
+furo_tampa_base = 1.6;
+// Furo passante na tampa e escareado da cabeça (M2 DIN 965: 2.3 / 4.0 / 1.2)
+furo_tampa = 2.3;
+d_cabeca_tampa = 4.0;
+h_cabeca_tampa = 1.2;
 
 /* [Parafuso lateral (fixacao = lateral)] */
 // Furo lateral: 2.5 para abrir rosca M3 com macho
@@ -98,6 +102,8 @@ n_parafusos_tampa = n_pastilhas == 1 ? 3 : n_pastilhas;
 echo(str("Parede externa mínima: ", parede_externa, " mm"));
 echo(str("Espessura de pastilha aceita: até ", prof_cavidade - espessura_pistao, " mm"));
 assert(parede_externa > 0.3, "Parede externa < 0,3 mm: reduza parede_entre ou n_pastilhas");
+assert(fixacao == "lateral" || r_parafusos_tampa + d_cabeca_tampa / 2 < d_secao / 2 - 0.4,
+       "Cabeça do parafuso da tampa sai da borda: reduza r_parafusos_tampa");
 assert(prof_cavidade > espessura_pistao, "Cavidade rasa demais para o pistão");
 if (fixacao == "lateral")
     echo(str("Calço lateral: pastilhas com pelo menos ~", z_lateral, " mm de espessura"));
@@ -130,7 +136,7 @@ module base() {
         }
         if (fixacao == "tampa")
             for (p = parafusos_tampa()) translate([p[0], p[1], -1])
-                cylinder(d = furo_m2_base, h = altura + 2);
+                cylinder(d = furo_tampa_base, h = altura + 2);
         if (fixacao == "lateral")
             for (i = [0 : n_pastilhas - 1]) {
                 c = centros()[i];
@@ -154,10 +160,11 @@ module tampa() {
             translate([0, 0, aba_reta])
                 cylinder(d1 = d_janela, d2 = d_janela_topo, h = espessura_tampa - aba_reta + 0.03);
         }
-        // Escareado para parafuso M2 de cabeça chata (DIN 965)
+        // Escareado para parafuso de cabeça chata (DIN 965)
         for (p = parafusos_tampa()) translate([p[0], p[1], -0.01]) {
-            cylinder(d = 2.3, h = espessura_tampa + 1);
-            translate([0, 0, espessura_tampa - 1.2]) cylinder(d1 = 2.3, d2 = 4.0, h = 1.22);
+            cylinder(d = furo_tampa, h = espessura_tampa + 1);
+            translate([0, 0, espessura_tampa - h_cabeca_tampa])
+                cylinder(d1 = furo_tampa, d2 = d_cabeca_tampa, h = h_cabeca_tampa + 0.02);
         }
     }
 }
