@@ -40,6 +40,8 @@ compensa a diferença de espessura entre elas. O mesmo parafuso serve para extra
 
 ![Base com parafuso lateral](img/base_2x13mm_lateral.png)
 
+![Como funciona o parafuso lateral: corte e vista de cima](img/desenho_parafuso_lateral.png)
+
 - Um parafuso M3 sem cabeça entra pela lateral do cilindro, como nos porta-amostras de MEV, e empurra um
   **calço de nylon ou PTFE** (Ø 2,3 × 2,5 mm) contra a borda da pastilha.
 - A face fica **rente ao topo**, e nenhuma parte da pastilha fica coberta.
