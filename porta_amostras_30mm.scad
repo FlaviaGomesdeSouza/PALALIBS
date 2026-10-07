@@ -26,6 +26,8 @@ fixacao = "tampa"; // [tampa, lateral]
 ajuste = "parafuso"; // [parafuso, mola]
 // Material de impressão; só os presets (x1c_*.scad) usam. Precisa vir antes das folgas.
 material = "";
+// Modelos derivados que têm as próprias peças desligam a renderização deste arquivo
+renderizar_principal = true;
 
 /* [Seção do porta-amostras] */
 // Diâmetro nominal da seção aceita pelo porta-amostras do equipamento (mm)
@@ -228,7 +230,8 @@ module calco() {
     cylinder(d = diametro_calco, h = comprimento_calco);
 }
 
-if (peca == "base") base();
+if (!renderizar_principal) {}
+else if (peca == "base") base();
 else if (peca == "tampa") tampa();
 else if (peca == "pistao") pistao();
 else if (peca == "calco") calco();

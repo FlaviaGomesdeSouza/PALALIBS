@@ -200,6 +200,51 @@ externo × comprimento) ou *"compression spring 0.5x6x10 stainless"*. Kits sorti
 costumam ter essa medida. Com fio de 0,4 mm a força fica em ~1–2 N por pastilha; com fio de 0,5 mm, em
 ~3–5 N. As duas servem; prefira **0,4 mm** se as pastilhas forem frágeis (sem aglutinante).
 
+## Terceiro modelo: mola + tampa de baioneta (tudo impresso)
+
+![Vista explodida: base, molas, pistões, pastilhas, tampa e anel de baioneta](img/baioneta_explodida.png)
+
+Em `x1c_mola_baioneta_2x13mm.scad`, o porta-amostras não tem rosca, parafuso nem inserto. **Só as 2 molas
+são compradas.** O fechamento segue o princípio do pote de conserva:
+
+- **Tampa:** disco plano com as janelas. Desce reto sobre as pastilhas e **não gira**, porque 2 pinos da
+  base a travam. Assim nada raspa a face de análise.
+- **Anel de baioneta:** aro fino por cima da tampa, com 2 garras. É a **única peça que gira**.
+- **Trava:** a mola empurra a tampa e o anel para cima, e o dente de cada garra sobe num rebaixo. Isso dá
+  o "clique" e impede que o anel gire sozinho.
+
+![Montado](img/baioneta_montada.png)
+
+**Montagem:**
+1. Coloque a mola no poço, o pistão por cima (pino para baixo) e a pastilha com a face para cima.
+2. Encaixe a tampa nos 2 pinos da base. Ela só entra numa posição e desce reta.
+3. Posicione o anel com as garras nos rasgos da base. Os pontos gravados no aro ficam sobre as garras.
+4. **Empurre para baixo e gire ~35° no sentido anti-horário** (visto de cima) até sentir o clique.
+5. Para abrir, empurre e gire no sentido horário. A mola levanta a tampa e as pastilhas.
+
+**Medidas:**
+- Altura total de **14 mm**: base de 11,2 mm + tampa de 1,6 mm + aro de 1,2 mm. Confira se o
+  porta-amostras aceita essa altura.
+- Ao travar, a tampa fica 0,75 mm acima da base. As duas faces continuam no mesmo plano, encostadas na
+  tampa.
+- O aro do anel tem raio interno de 13 mm e não cobre a área útil das janelas.
+
+| Arquivo (`stl/x1c_mola_baioneta/`) | Como imprimir |
+|---|---|
+| `base.stl` | Em pé (fundo na mesa), sem suporte. |
+| `tampa.stl` | Face de baixo na mesa: é a face de referência que encosta nas pastilhas. |
+| `anel.stl` | **De cabeça para baixo** (aro na mesa, garras para cima), sem suporte. |
+| `pistao.stl` | 2 unidades, face plana na mesa (pino para cima). |
+
+Material e configuração: os mesmos da seção X1C (PC ou PETG; `material` no arquivo).
+
+**Compra:** só **2 molas de compressão inox** (Ø 6 mm, livre 10 mm, fio 0,4–0,5 mm).
+
+**Conferência do encaixe:** a interferência entre as peças foi verificada no modelo em três posições
+(entrada, meio do giro e travado), e não há sobreposição. As folgas da baioneta (0,25 mm) e a pequena
+saliência de 0,8 mm do dente são pontos a confirmar na primeira impressão. Se o giro ficar duro, aumente
+`folga_b`.
+
 ## Fabricação
 
 - **Versão para 3 pastilhas:** a parede da borda fica com ~0,5 mm. Usine em alumínio, PEEK ou POM
