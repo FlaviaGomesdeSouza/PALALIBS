@@ -161,6 +161,45 @@ de nylon** e abra a rosca do furo lateral com **macho M3**. Para os insertos, us
 
 ![Peças para comprar](img/compras/lista_compras.png)
 
+## Segundo modelo: ajuste de altura por mola (2 pastilhas, X1C em PC)
+
+![Corte do modelo com mola](img/desenho_mola.png)
+
+Em `x1c_mola_2x13mm.scad`, a mola substitui o parafuso de ajuste. Cada pastilha apoia num pistão
+empurrado por uma **mola de compressão**. Ao parafusar a tampa, as molas comprimem e mantêm cada pastilha
+pressionada contra a borda da janela.
+
+**Como funciona:**
+- **Sem ajuste manual:** as duas faces ficam sempre no mesmo plano (a face inferior da tampa), para
+  qualquer espessura entre **1 e 4 mm**, mesmo que cada pastilha tenha uma espessura diferente.
+- **Pressão constante:** a força da mola não depende de quanto você aperta, então o risco de trincar a
+  pastilha é menor.
+- **Troca rápida:** ao soltar a tampa, a mola levanta a pastilha.
+- **Respiro de Ø 1,5 mm** no fundo de cada poço, para o gás da célula de LA purgar o ar preso.
+- **Altura total de 13 mm**, sendo a base de 11 mm e a tampa de 2 mm. Confira se o porta-amostras aceita
+  essa altura.
+
+| Arquivo (`stl/x1c_mola/`) | Peça |
+|---|---|
+| `base_2x13mm_mola.stl` | Base com 2 cavidades e 2 poços de mola |
+| `tampa_2x13mm.stl` | Tampa (igual à da versão com parafuso) |
+| `pistao_mola_13mm.stl` | Pistão com pino-guia (imprima 2, com a face plana na mesa) |
+
+A configuração de impressão em PC é a mesma da seção anterior.
+
+### Lista de compras (modelo com mola)
+
+| Qtde | Item |
+|---|---|
+| 2 | **Mola de compressão inox**: Ø externo **6 mm**, comprimento livre **10 mm**, fio de **0,4–0,5 mm** (comprimento sólido ≤ 3 mm) |
+| 2 | Inserto de latão M3 para fixar a quente (só para a tampa) |
+| 2 | Parafuso M3 × 10 mm escareado, inox (DIN 965) |
+
+Não precisa de parafuso sem cabeça. Buscar por *"mola de compressão inox 0,5 × 6 × 10 mm"* (fio × Ø
+externo × comprimento) ou *"compression spring 0.5x6x10 stainless"*. Kits sortidos de molas pequenas
+costumam ter essa medida. Com fio de 0,4 mm a força fica em ~1–2 N por pastilha; com fio de 0,5 mm, em
+~3–5 N. As duas servem; prefira **0,4 mm** se as pastilhas forem frágeis (sem aglutinante).
+
 ## Fabricação
 
 - **Versão para 3 pastilhas:** a parede da borda fica com ~0,5 mm. Usine em alumínio, PEEK ou POM

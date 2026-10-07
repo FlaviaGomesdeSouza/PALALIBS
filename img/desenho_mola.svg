@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="600" viewBox="0 0 1180 600" font-family="Helvetica, Arial, sans-serif" fill="#222">
+<defs>
+<marker id="sd0312d" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#d0312d"/></marker>
+<marker id="s7b3fe4" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#7b3fe4"/></marker>
+<pattern id="hach" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="8" height="8" fill="#c9d6e3"/><line x1="0" y1="0" x2="0" y2="8" stroke="#8fa3b8" stroke-width="2"/></pattern>
+</defs><rect width="100%" height="100%" fill="#fff"/>
+<text x="30" y="40" font-size="22" font-weight="bold">Corte pelo centro das duas pastilhas: ajuste de altura por mola</text>
+<text x="30" y="66" font-size="15" fill="#555">À esquerda, pastilha de 3,5 mm; à direita, de 1,5 mm. As duas faces ficam no mesmo plano sem nenhum ajuste.</text>
+<polygon points="61.0,430.0 659.0,430.0 659.0,210.0 61.0,210.0" fill="url(#hach)" stroke="#34495e" stroke-width="1.5" />
+<polygon points="86.0,330.0 354.0,330.0 354.0,210.0 86.0,210.0" fill="#fff" stroke="#34495e" stroke-width="1.5" />
+<polygon points="154.0,400.0 286.0,400.0 286.0,330.0 154.0,330.0" fill="#fff" stroke="#34495e" stroke-width="1.5" />
+<polygon points="205.0,430.0 235.0,430.0 235.0,400.0 205.0,400.0" fill="#fff" stroke="#34495e" stroke-width="1.5" />
+<polygon points="366.0,330.0 634.0,330.0 634.0,210.0 366.0,210.0" fill="#fff" stroke="#34495e" stroke-width="1.5" />
+<polygon points="434.0,400.0 566.0,400.0 566.0,330.0 434.0,330.0" fill="#fff" stroke="#34495e" stroke-width="1.5" />
+<polygon points="485.0,430.0 515.0,430.0 515.0,400.0 485.0,400.0" fill="#fff" stroke="#34495e" stroke-width="1.5" />
+<polygon points="61.0,210.0 659.0,210.0 659.0,170.0 61.0,170.0" fill="#7f8c9a" stroke="#34495e" stroke-width="1.5" />
+<polygon points="106.0,210.4 334.0,210.4 334.0,198.0 354.0,169.6 86.0,169.6 106.0,198.0" fill="#fff" stroke="none" stroke-width="1.5" />
+<line x1="106.0" y1="210.0" x2="106.0" y2="198.0" stroke="#34495e" stroke-width="1.5"/>
+<line x1="334.0" y1="210.0" x2="334.0" y2="198.0" stroke="#34495e" stroke-width="1.5"/>
+<polygon points="386.0,210.4 614.0,210.4 614.0,198.0 634.0,169.6 366.0,169.6 386.0,198.0" fill="#fff" stroke="none" stroke-width="1.5" />
+<line x1="386.0" y1="210.0" x2="386.0" y2="198.0" stroke="#34495e" stroke-width="1.5"/>
+<line x1="614.0" y1="210.0" x2="614.0" y2="198.0" stroke="#34495e" stroke-width="1.5"/>
+<polygon points="90.0,280.0 350.0,280.0 350.0,210.0 90.0,210.0" fill="#9a9a9a" stroke="#34495e" stroke-width="1.5" />
+<polygon points="89.0,320.0 351.0,320.0 351.0,280.0 89.0,280.0" fill="#f0a030" stroke="#34495e" stroke-width="1.5" />
+<polygon points="176.0,344.0 264.0,344.0 264.0,320.0 176.0,320.0" fill="#f0a030" stroke="#34495e" stroke-width="1.5" />
+<polyline points="163.0,400.0 277.0,396.7 163.0,390.0 277.0,383.3 163.0,376.7 277.0,370.0 163.0,363.3 277.0,356.7 163.0,350.0 277.0,343.3 163.0,336.7 277.0,330.0 163.0,323.3 277.0,320.0" fill="none" stroke="#4a4a4a" stroke-width="3" stroke-linejoin="round"/>
+<line x1="312.0" y1="352.0" x2="312.0" y2="286.0" stroke="#d0312d" stroke-width="2.5" marker-end="url(#sd0312d)"/>
+<text x="220.0" y="251.0" font-size="15" fill="#fff" text-anchor="middle">3,5 mm</text>
+<polygon points="370.0,240.0 630.0,240.0 630.0,210.0 370.0,210.0" fill="#9a9a9a" stroke="#34495e" stroke-width="1.5" />
+<polygon points="369.0,280.0 631.0,280.0 631.0,240.0 369.0,240.0" fill="#f0a030" stroke="#34495e" stroke-width="1.5" />
+<polygon points="456.0,304.0 544.0,304.0 544.0,280.0 456.0,280.0" fill="#f0a030" stroke="#34495e" stroke-width="1.5" />
+<polyline points="443.0,400.0 557.0,395.0 443.0,385.0 557.0,375.0 443.0,365.0 557.0,355.0 443.0,345.0 557.0,335.0 443.0,325.0 557.0,315.0 443.0,305.0 557.0,295.0 443.0,285.0 557.0,280.0" fill="none" stroke="#4a4a4a" stroke-width="3" stroke-linejoin="round"/>
+<line x1="592.0" y1="312.0" x2="592.0" y2="246.0" stroke="#d0312d" stroke-width="2.5" marker-end="url(#sd0312d)"/>
+<text x="500.0" y="231.0" font-size="15" fill="#fff" text-anchor="middle">1,5 mm</text>
+<line x1="31.0" y1="210.0" x2="689.0" y2="210.0" stroke="#7b3fe4" stroke-dasharray="7 4" stroke-width="2"/>
+<line x1="220.0" y1="80.0" x2="220.0" y2="204.0" stroke="#7b3fe4" stroke-width="3" marker-end="url(#s7b3fe4)"/>
+<line x1="500.0" y1="80.0" x2="500.0" y2="204.0" stroke="#7b3fe4" stroke-width="3" marker-end="url(#s7b3fe4)"/>
+<text x="230.0" y="100.0" font-size="15" fill="#7b3fe4">laser (LA) / LIBS</text>
+<line x1="619.0" y1="190.0" x2="754" y2="113.0" stroke="#222" stroke-width="1"/><circle cx="619.0" cy="190.0" r="2.5" fill="#222"/>
+<text x="760" y="118.0" font-size="16">Tampa parafusada (2 × M3 escareado)</text>
+<line x1="614.0" y1="204.0" x2="754" y2="157.0" stroke="#222" stroke-width="1"/><circle cx="614.0" cy="204.0" r="2.5" fill="#222"/>
+<text x="760" y="162.0" font-size="16">Borda da janela (0,8 mm): a pastilha é</text>
+<text x="760" y="182.0" font-size="16">empurrada contra ela</text>
+<line x1="683.0" y1="210.0" x2="754" y2="215.0" stroke="#222" stroke-width="1"/><circle cx="683.0" cy="210.0" r="2.5" fill="#222"/>
+<text x="760" y="220.0" font-size="16">Plano de referência: as duas faces</text>
+<text x="760" y="240.0" font-size="16">ficam aqui, mesmo com espessuras diferentes</text>
+<line x1="440.0" y1="260.0" x2="754" y2="277.0" stroke="#222" stroke-width="1"/><circle cx="440.0" cy="260.0" r="2.5" fill="#222"/>
+<text x="760" y="282.0" font-size="16">Pistão com pino-guia (impresso)</text>
+<line x1="556.0" y1="340.0" x2="754" y2="317.0" stroke="#222" stroke-width="1"/><circle cx="556.0" cy="340.0" r="2.5" fill="#222"/>
+<text x="760" y="322.0" font-size="16">Mola de compressão inox</text>
+<text x="760" y="342.0" font-size="16">(Ø 6 mm, livre 10 mm)</text>
+<line x1="592.0" y1="294.0" x2="754" y2="369.0" stroke="#222" stroke-width="1"/><circle cx="592.0" cy="294.0" r="2.5" fill="#222"/>
+<text x="760" y="374.0" font-size="16">A mola empurra a pastilha para cima</text>
+<line x1="500.0" y1="420.0" x2="754" y2="409.0" stroke="#222" stroke-width="1"/><circle cx="500.0" cy="420.0" r="2.5" fill="#222"/>
+<text x="760" y="414.0" font-size="16">Respiro (Ø 1,5 mm): deixa o poço purgar</text>
+<text x="30" y="470.0" font-size="16" font-weight="bold">Montagem:</text>
+<text x="30" y="494.0" font-size="16" >1. Coloque a mola no poço, o pistão por cima (pino para baixo) e a pastilha com a face para cima.</text>
+<text x="30" y="518.0" font-size="16" >2. Encaixe a tampa: as pastilhas sobem até a borda das janelas.</text>
+<text x="30" y="542.0" font-size="16" >3. Aperte os 2 parafusos da tampa até encostar. Pronto: sem ajuste de altura.</text>
+<text x="30" y="566.0" font-size="16" >Para trocar a pastilha, solte a tampa: a mola levanta a pastilha e ela sai fácil.</text>
+</svg>
