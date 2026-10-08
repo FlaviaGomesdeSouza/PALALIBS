@@ -200,6 +200,54 @@ externo × comprimento) ou *"compression spring 0.5x6x10 stainless"*. Kits sorti
 costumam ter essa medida. Com fio de 0,4 mm a força fica em ~1–2 N por pastilha; com fio de 0,5 mm, em
 ~3–5 N. As duas servem; prefira **0,4 mm** se as pastilhas forem frágeis (sem aglutinante).
 
+## Quarto modelo (recomendado): carregado por baixo, mola leve e fundo de baioneta
+
+![Corte do modelo carregado por baixo](img/desenho_carga_inferior.png)
+
+Em `x1c_mola_carga_inferior_2x13mm.scad`, **não há tampa nem anel por cima**. A própria peça tem, no topo
+de cada furo, uma **borda de 0,6 mm** que segura 0,8 mm da beirada da pastilha. A pastilha entra **por
+baixo**, com a face de análise para baixo; a mola a empurra contra essa borda; e um **fundo de baioneta**
+fecha tudo.
+
+**Por que este modelo substitui tampa + anel finos:** uma tampa e um anel com menos de 1 mm de plástico,
+presos só pelas 2 garras (no eixo x), flexionariam vários décimos de milímetro sob a mola, na região das
+pastilhas (no eixo y). As faces sairiam inclinadas e fora do mesmo plano. Aqui:
+- Acima da face de análise fica **só a borda de 0,6 mm**. Não há aro, tampa nem parafuso no topo.
+- A borda é parte do corpo e está presa em toda a volta da janela, então praticamente não flexiona.
+- O corpo é impresso **de cabeça para baixo**, então as duas bordas saem direto da mesa: planas e no
+  mesmo plano.
+- **Nada gira sobre a face da pastilha.** Só o fundo gira, e ele toca apenas as molas.
+- Altura total de **12 mm** (12,55 mm com o fundo travado), contra 14 mm do modelo anterior.
+
+![Vista explodida](img/carga_inferior_explodida.png)
+
+**Montagem:**
+1. Vire o corpo de cabeça para baixo e coloque cada pastilha **com a face de análise para baixo**. Ela
+   apoia na borda.
+2. Coloque o pistão (pino para cima) e a mola sobre o pino.
+3. Encaixe o fundo com as garras nos rasgos, **empurre e gire ~35° no sentido horário** (olhando para o
+   fundo, com o corpo de cabeça para baixo) até o clique.
+4. Vire o conjunto. Para abrir, empurre o fundo e gire no sentido contrário.
+
+Os números 1 e 2 estão gravados no topo, ao lado de cada janela.
+
+| Arquivo (`stl/x1c_carga_inferior/`) | Orientação (já exportado assim) |
+|---|---|
+| `corpo.stl` | **Topo na mesa** (de cabeça para baixo): as bordas saem planas da placa. |
+| `fundo.stl` | Face de baixo na mesa, garras para cima. O dente da garra tem só 0,6 mm de saliência; não precisa de suporte. |
+| `pistao.stl` | 2 unidades, face plana na mesa, pino para cima. |
+
+![Peças na orientação de impressão](img/carga_inferior_impressao.png)
+
+**Mola (compra):** 2 molas de compressão inox **leves**: Ø externo 6 mm, comprimento livre 10 mm, **fio de
+0,3 mm** (comprimento sólido ≤ 3 mm). A força fica em ~0,2–0,4 N por pastilha. É muitas vezes o peso da
+pastilha, suficiente para segurá-la com o porta-amostras inclinado, e não força a borda. Buscar por
+*"mola de compressão inox 0,3 × 6 × 10 mm"*.
+
+**Conferência:** a sobreposição entre corpo e fundo foi verificada no modelo na entrada, no meio do giro,
+travado e travado apertado; só há contato de face, sem sobreposição. A borda de 0,6 mm e as folgas da
+baioneta (`folga_b = 0,25`) são os pontos a confirmar na primeira impressão.
+
 ## Terceiro modelo: mola + tampa de baioneta (tudo impresso)
 
 ![Vista explodida: base, molas, pistões, pastilhas, tampa e anel de baioneta](img/baioneta_explodida.png)
@@ -233,7 +281,7 @@ são compradas.** O fechamento segue o princípio do pote de conserva:
 |---|---|
 | `base.stl` | Em pé (fundo na mesa), sem suporte. |
 | `tampa.stl` | Face de baixo na mesa: é a face de referência que encosta nas pastilhas. |
-| `anel.stl` | **De cabeça para baixo** (aro na mesa, garras para cima), sem suporte. |
+| `anel.stl` | Já exportado **de cabeça para baixo** (aro na mesa, garras para cima), sem suporte. |
 | `pistao.stl` | 2 unidades, face plana na mesa (pino para cima). |
 
 Material e configuração: os mesmos da seção X1C (PC ou PETG; `material` no arquivo).

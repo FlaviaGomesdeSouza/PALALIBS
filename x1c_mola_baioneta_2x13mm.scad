@@ -135,7 +135,7 @@ module anel() {
 
 if (peca == "base") base_baioneta();
 else if (peca == "tampa") tampa_baioneta();
-else if (peca == "anel") anel();
+else if (peca == "anel") translate([0, 0, t_placa + t_aro]) mirror([0, 0, 1]) anel();  // aro na mesa
 else if (peca == "pistao") pistao();
 else if (peca == "conjunto") {
     color("#5b8ec9") base_baioneta();
