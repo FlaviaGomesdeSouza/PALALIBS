@@ -216,8 +216,12 @@ pastilhas (no eixo y). As faces sairiam inclinadas e fora do mesmo plano. Aqui:
 - A borda é parte do corpo e está presa em toda a volta da janela, então praticamente não flexiona.
 - O corpo é impresso **de cabeça para baixo**, então as duas bordas saem direto da mesa: planas e no
   mesmo plano.
-- **Nada gira sobre a face da pastilha.** Só o fundo gira, e ele toca apenas as molas.
-- Altura total de **12 mm** (12,55 mm com o fundo travado), contra 14 mm do modelo anterior.
+- **Nada gira sobre a face da pastilha.** Só o fundo gira, e ele desliza por baixo da placa de molas.
+- **A mola fica encaixada nas duas pontas:** em cima, no pino do pistão; embaixo, no pino da **placa de
+  molas**. A placa não gira (2 pinos entram em furos no corpo), então o giro do fundo não arrasta as
+  molas.
+- Altura total de **12 mm** (12,55 mm com o fundo travado): corpo de 9,8 mm + placa de 1,0 mm + fundo de
+  1,2 mm.
 
 ![Vista explodida](img/carga_inferior_explodida.png)
 
@@ -225,15 +229,18 @@ pastilhas (no eixo y). As faces sairiam inclinadas e fora do mesmo plano. Aqui:
 1. Vire o corpo de cabeça para baixo e coloque cada pastilha **com a face de análise para baixo**. Ela
    apoia na borda.
 2. Coloque o pistão (pino para cima) e a mola sobre o pino.
-3. Encaixe o fundo com as garras nos rasgos, **empurre e gire ~35° no sentido horário** (olhando para o
+3. Coloque a placa de molas com os pinos para baixo: os 2 pinos-guia entram nas molas e os 2 pinos de
+   trava entram nos furos do corpo.
+4. Encaixe o fundo com as garras nos rasgos, **empurre e gire ~35° no sentido horário** (olhando para o
    fundo, com o corpo de cabeça para baixo) até o clique.
-4. Vire o conjunto. Para abrir, empurre o fundo e gire no sentido contrário.
+5. Vire o conjunto. Para abrir, empurre o fundo e gire no sentido contrário.
 
 Os números 1 e 2 estão gravados no topo, ao lado de cada janela.
 
 | Arquivo (`stl/x1c_carga_inferior/`) | Orientação (já exportado assim) |
 |---|---|
 | `corpo.stl` | **Topo na mesa** (de cabeça para baixo): as bordas saem planas da placa. |
+| `placa.stl` | Face lisa na mesa, pinos para cima. |
 | `fundo.stl` | Face de baixo na mesa, garras para cima. O dente da garra tem só 0,6 mm de saliência; não precisa de suporte. |
 | `pistao.stl` | 2 unidades, face plana na mesa, pino para cima. |
 
@@ -244,8 +251,8 @@ Os números 1 e 2 estão gravados no topo, ao lado de cada janela.
 pastilha, suficiente para segurá-la com o porta-amostras inclinado, e não força a borda. Buscar por
 *"mola de compressão inox 0,3 × 6 × 10 mm"*.
 
-**Conferência:** a sobreposição entre corpo e fundo foi verificada no modelo na entrada, no meio do giro,
-travado e travado apertado; só há contato de face, sem sobreposição. A borda de 0,6 mm e as folgas da
+**Conferência:** a sobreposição entre corpo, placa de molas e fundo foi verificada no modelo na entrada,
+no meio do giro, travado e travado apertado; só há contato de face, sem sobreposição. A borda de 0,6 mm e as folgas da
 baioneta (`folga_b = 0,25`) são os pontos a confirmar na primeira impressão.
 
 ## Terceiro modelo: mola + tampa de baioneta (tudo impresso)

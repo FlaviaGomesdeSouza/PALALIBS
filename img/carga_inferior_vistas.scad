@@ -9,7 +9,8 @@ if (vista == "explodida") {
         translate([0, 0, -12]) color("#f0a030") pistao_c();
         translate([0, 0, -22]) color("silver") mola_c(7);
     }
-    translate([0, 0, -28]) rotate([0, 0, -giro]) color("#e8a33d") fundo();
+    translate([0, 0, -26]) color("#7cc47c") placa_molas();
+    translate([0, 0, -34]) rotate([0, 0, -giro]) color("#e8a33d") fundo();
 }
 if (vista == "corte") intersection() {
     union() {
@@ -26,5 +27,6 @@ if (vista == "corte") intersection() {
 if (vista == "impressao") {
     translate([-34, 0, 0]) translate([0, 0, h_corpo]) mirror([0, 0, 1]) corpo();
     translate([0, 0, t_fundo]) fundo();
+    translate([0, 34, t_placa_molas]) placa_molas();
     for (x = [26, 42]) translate([x, 0, t_pistao]) mirror([0, 0, 1]) pistao_c();
 }

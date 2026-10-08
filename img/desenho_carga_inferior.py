@@ -4,10 +4,11 @@ from pathlib import Path
 
 S = 22
 R_EXT, YC, R_CAV, R_PAST, R_PIST = 14.95, 7.0, 6.7, 6.5, 6.55
-H, T_FUNDO, BORDA, BORDA_RETA, R_JAN = 10, 2, 0.6, 0.3, 5.7
-PIST, R_PINO, H_PINO, DESCIDA = 2, 2.0, 2.5, 0.55
+H, T_FUNDO, BORDA, BORDA_RETA, R_JAN = 9.8, 1.2, 0.6, 0.3, 5.7
+T_PLACA, R_PLACA, H_GUIA = 1.0, 12.6, 1.2
+PIST, R_PINO, H_PINO, DESCIDA = 2, 2.0, 1.5, 0.55
 ESP = {-1: 3.5, 1: 1.5}
-COR = dict(corpo="#c9d6e3", borda="#34495e", fundo="#f2c27b", past="#9a9a9a",
+COR = dict(placa="#9fd49f", corpo="#c9d6e3", borda="#34495e", fundo="#f2c27b", past="#9a9a9a",
            pist="#f0a030", mola="#4a4a4a", forca="#d0312d", laser="#7b3fe4")
 X0, ZB = 380, 470
 X = lambda x: X0 + S * x
@@ -44,7 +45,7 @@ def mola(xc, z0, z1, n=7, r=2.85):
     w(f'<polyline points="{p}" fill="none" stroke="{COR["mola"]}" stroke-width="2" stroke-linejoin="round"/>')
 
 
-W, Hc = 1230, 760
+W, Hc = 1230, 810
 w(f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{Hc}" viewBox="0 0 {W} {Hc}" '
   f'font-family="Helvetica, Arial, sans-serif" fill="#222"><defs>')
 for cor in (COR["forca"], COR["laser"]):
@@ -68,8 +69,11 @@ for s in (-1, 1):
     for xx in (xc - R_CAV, xc + R_CAV):
         w(f'<line x1="{X(xx):.1f}" y1="{Z(0):.1f}" x2="{X(xx):.1f}" y2="{Z(H-BORDA):.1f}" stroke="{COR["borda"]}" stroke-width="1.5"/>')
 
-# fundo (baioneta) travado, um pouco abaixo do corpo
-rect(-R_EXT, -DESCIDA - T_FUNDO, R_EXT, -DESCIDA, COR["fundo"])
+# placa de molas (não gira) e fundo de baioneta, travados um pouco abaixo do corpo
+rect(-R_PLACA, -DESCIDA - T_PLACA, R_PLACA, -DESCIDA, COR["placa"])
+for s in (-1, 1):
+    rect(s * YC - R_PINO, -DESCIDA, s * YC + R_PINO, -DESCIDA + H_GUIA, COR["placa"])
+rect(-R_EXT, -DESCIDA - T_PLACA - T_FUNDO, R_EXT, -DESCIDA - T_PLACA, COR["fundo"])
 
 for s in (-1, 1):
     xc, e = s * YC, ESP[s]
@@ -92,14 +96,15 @@ rotulo(X(R_EXT + 1.2), Z(H - BORDA), Z(H - 0.6), "Plano de referência: as faces
 rotulo(X(R_EXT - 0.6), Z(4), Z(H - 3.8), "Corpo (impresso de cabeça para baixo:\na borda sai lisa e plana, direto da mesa)")
 rotulo(X(YC - 3), Z(H - BORDA - 1.5 - 1), Z(H - 6.6), "Pistão com pino-guia")
 rotulo(X(YC + 2.85), Z(3), Z(H - 8.4), "Mola leve (fio 0,3 mm): ~0,2–0,4 N")
-rotulo(X(R_EXT - 3), Z(-DESCIDA - 1), Z(H - 10.4), "Fundo com baioneta: gira ~35° e trava")
+rotulo(X(YC + 1.5), Z(-DESCIDA + 0.6), Z(H - 10.4), "Placa de molas: pino-guia embaixo da mola;\nnão gira (2 pinos travam no corpo)")
+rotulo(X(R_EXT - 1), Z(-DESCIDA - T_PLACA - 0.6), Z(H - 12.6), "Fundo com baioneta: gira ~35° por baixo da placa")
 
 passos = ["Montagem:",
           "1. Vire o corpo de cabeça para baixo e coloque cada pastilha com a face de análise para baixo (ela apoia na borda).",
-          "2. Coloque o pistão (pino para cima) e a mola sobre o pino.",
+          "2. Coloque o pistão (pino para cima), a mola sobre o pino e a placa de molas (pinos nos furos do corpo).",
           "3. Encaixe o fundo com as garras nos rasgos, empurre e gire ~35° no sentido HORÁRIO (olhando para o fundo) até o clique. Vire o conjunto.",
-          "Nada gira sobre a face da pastilha: só o fundo gira, e ele toca apenas as molas."]
+          "A mola fica encaixada nas duas pontas. Só o fundo gira, e ele desliza sob a placa, sem arrastar as molas."]
 for i, t in enumerate(passos):
-    w(f'<text x="30" y="{Z(-4.6) + i*24:.1f}" font-size="16" {"font-weight=\"bold\"" if i == 0 else ""}>{t}</text>')
+    w(f'<text x="30" y="{Z(-5.4) + i*24:.1f}" font-size="16" {"font-weight=\"bold\"" if i == 0 else ""}>{t}</text>')
 w('</svg>')
 Path(__file__).with_suffix(".svg").write_text("\n".join(out), encoding="utf-8")
